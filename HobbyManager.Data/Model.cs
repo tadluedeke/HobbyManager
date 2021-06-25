@@ -16,8 +16,10 @@ namespace HobbyManager.Data
         public Guid OwnerId { get; set; }
 
         [Required]
+        [Display(Name ="Model Name")]
         public string Name { get; set; }
 
+        [Display(Name="Model Scale")]
         public string Scale { get; set; }
 
         [Required]
