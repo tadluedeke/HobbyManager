@@ -57,5 +57,43 @@ namespace HobbyManager.Services
                 return query.ToArray();
             }
         }
+
+        public PaintDetail GetPaintById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Paints
+                    .Single(e => e.PaintId == id && e.OwnerId == _userId);
+                return
+                    new PaintDetail
+                    {
+                        PaintId = entity.PaintId,
+                        Brand = entity.Brand,
+                        Name = entity.Name,
+                        Color = entity.Color,
+                        SKU = entity.SKU
+                    };
+            }
+        }
+
+        public bool UpdatePaint(PaintEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Paints
+                    .Single(e => e.PaintId == model.PaintId && e.OwnerId == _userId);
+
+                entity.Brand = model.Brand;
+                entity.Name = model.Name;
+                entity.Color = model.Color;
+                entity.SKU = model.SKU;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

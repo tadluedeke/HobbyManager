@@ -47,6 +47,32 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: Details
+        public ActionResult Details(int id)
+        {
+            var svc = CreatePaintService();
+            var model = svc.GetPaintById(id);
+
+            return View(model);
+        }
+
+        //GET: PaintEdit
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePaintService();
+            var detail = service.GetPaintById(id);
+            var model =
+                new PaintEdit
+                {
+                    PaintId = detail.PaintId,
+                    Brand = detail.Brand,
+                    Name = detail.Name,
+                    Color = detail.Color,
+                    SKU = detail.SKU
+                };
+            return View(model);
+        }
+
         private PaintService CreatePaintService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

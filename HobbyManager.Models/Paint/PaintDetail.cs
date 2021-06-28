@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace HobbyManager.Models.Paint
 {
-    public class PaintCreate
+    public class PaintDetail
     {
-        [Required]
+        public int PaintId { get; set; }
         public string Brand { get; set; }
 
-        [Required]
         [Display(Name = "Paint Name")]
         public string Name { get; set; }
-
         public string Color { get; set; }
 
         [Display(Name = "Product SKU")]
