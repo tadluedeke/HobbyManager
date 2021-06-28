@@ -75,5 +75,22 @@ namespace HobbyManager.Services
                     };
             }
         }
+
+        public bool UpdateModel(ModelEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Models
+                    .Single(e => e.ModelId == model.ModelId && e.OwnerId == _userId);
+
+                entity.Name = model.Name;
+                entity.Scale = model.Scale;
+                entity.Brand = model.Brand;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

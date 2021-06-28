@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ModelCreate.cs" />
+    <Compile Include="Model\ModelDetail.cs" />
     <Compile Include="Model\ModelListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

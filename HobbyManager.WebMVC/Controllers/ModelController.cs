@@ -49,6 +49,31 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: ModelDetail
+        public ActionResult Details(int id)
+        {
+            var svc = CreateModelService();
+            var model = svc.GetModelById(id);
+
+            return View(model);
+        }
+
+        // ModelEdit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateModelService();
+            var detail = service.GetModelById(id);
+            var model =
+                new ModelEdit
+                {
+                    ModelId = detail.ModelId,
+                    Name = detail.Name,
+                    Scale = detail.Scale,
+                    Brand = detail.Brand
+                };
+            return View(model);
+        }
+
         private ModelService CreateModelService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
