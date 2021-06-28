@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\PaintController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +241,9 @@
     <Content Include="Views\Model\Details.cshtml" />
     <Content Include="Views\Model\Edit.cshtml" />
     <Content Include="Views\Model\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Paint\Create.cshtml" />
+    <Content Include="Views\Paint\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

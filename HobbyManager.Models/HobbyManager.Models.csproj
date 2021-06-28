@@ -58,6 +58,8 @@
     <Compile Include="Model\ModelDetail.cs" />
     <Compile Include="Model\ModelEdit.cs" />
     <Compile Include="Model\ModelListItem.cs" />
+    <Compile Include="Paint\PaintCreate.cs" />
+    <Compile Include="Paint\PaintListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

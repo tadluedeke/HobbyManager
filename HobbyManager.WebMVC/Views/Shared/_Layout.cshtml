@@ -26,6 +26,10 @@
             {
                     <li>@Html.ActionLink("Models", "Index", "Model")</li>
             }
+                    @if (User.Identity.IsAuthenticated)
+            {
+                    <li>@Html.ActionLink("Paints", "Index", "Paint")</li>
+            }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
