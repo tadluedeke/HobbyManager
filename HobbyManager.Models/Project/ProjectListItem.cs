@@ -12,8 +12,6 @@ namespace HobbyManager.Models.Project
         public int ProjectId { get; set; }
         public string Name { get; set; }
 
-        public int MyProperty { get; set; }
-
         [Display(Name = "Started")]
         public DateTime StartDate { get; set; }
 

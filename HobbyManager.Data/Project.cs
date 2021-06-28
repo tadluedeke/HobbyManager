@@ -25,6 +25,6 @@ namespace HobbyManager.Data
         public DateTime StartDate { get; set; }
 
         [Display(Name="Finished")]
-        public DateTime FinishDate { get; set; }
+        public DateTime? FinishDate { get; set; }
     }
 }

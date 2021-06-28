@@ -10,13 +10,12 @@ namespace HobbyManager.Models.Project
     public class ProjectCreate
     {
         public string Name { get; set; }
-        public int MyProperty { get; set; }
 
         [Required]
         [Display(Name = "Started")]
         public DateTime StartDate { get; set; }
 
         [Display(Name = "Finished")]
-        public DateTime FinishDate { get; set; }
+        public DateTime? FinishDate { get; set; }
     }
 }
