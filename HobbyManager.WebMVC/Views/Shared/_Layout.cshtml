@@ -30,6 +30,10 @@
             {
                     <li>@Html.ActionLink("Paints", "Index", "Paint")</li>
             }
+                    @if (User.Identity.IsAuthenticated)
+            {
+                    <li>@Html.ActionLink("Projects", "Index", "Project")</li>
+            }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
