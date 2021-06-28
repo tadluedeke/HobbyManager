@@ -10,9 +10,6 @@ namespace HobbyManager.Models.Model
    public class ModelCreate
     {
         [Required]
-        public Guid OwnerId { get; set; }
-
-        [Required]
         [Display(Name = "Model Name")]
         public string Name { get; set; }
 

@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HobbyManager.Data\HobbyManager.Data.csproj">
+      <Project>{e420fd7b-5ea5-4a21-987d-b4b7f4aa8cb7}</Project>
+      <Name>HobbyManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HobbyManager.Models\HobbyManager.Models.csproj">
+      <Project>{30fbd510-940b-4b92-9909-82d68ff4f7a4}</Project>
+      <Name>HobbyManager.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
