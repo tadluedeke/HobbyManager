@@ -1,4 +1,6 @@
 ﻿using HobbyManager.Models.Paint;
+using HobbyManager.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace HobbyManager.WebMVC.Controllers
         // GET: Paint
         public ActionResult Index()
         {
-            var model = new PaintListItem[0];
+            var service = CreatePaintService();
+            var model = service.GetPaints();
+            
             return View(model);
         }
 
@@ -28,11 +32,26 @@ namespace HobbyManager.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PaintCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreatePaintService();
+
+            if (service.CreatePaint(model))
+            {
+                TempData["SaveResult"] = "Your paint was successfully created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Paint could not be created.");
+
             return View(model);
+        }
+
+        private PaintService CreatePaintService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PaintService(userId);
+            return service;
         }
     }
 }
