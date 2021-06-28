@@ -73,6 +73,56 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
+        //POST: PaintEdit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PaintEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.PaintId != id)
+            {
+                ModelState.AddModelError("", "Id did not match.");
+                return View(model);
+            }
+
+            var service = CreatePaintService();
+
+            if (service.UpdatePaint(model))
+            {
+                TempData["SaveResult"] = "Your paint was successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your paint could not be updated.");
+            return View(model);
+        }
+
+        //GET: PaintDelete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreatePaintService();
+            var model = svc.GetPaintById(id);
+
+            return View(model);
+        }
+
+        //POST: PaintDelete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePaint(int id)
+        {
+            var service = CreatePaintService();
+
+            service.DeletePaint(id);
+
+            TempData["SaveResult"] = "Your note was successfully deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private PaintService CreatePaintService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

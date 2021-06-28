@@ -245,6 +245,8 @@
     <Content Include="Views\Paint\Create.cshtml" />
     <Content Include="Views\Paint\Index.cshtml" />
     <Content Include="Views\Paint\Details.cshtml" />
+    <Content Include="Views\Paint\Edit.cshtml" />
+    <Content Include="Views\Paint\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

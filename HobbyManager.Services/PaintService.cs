@@ -95,5 +95,20 @@ namespace HobbyManager.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeletePaint(int paintId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Paints
+                    .Single(e => e.PaintId == paintId && e.OwnerId == _userId);
+
+                ctx.Paints.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

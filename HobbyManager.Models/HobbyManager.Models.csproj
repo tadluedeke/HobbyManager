@@ -60,6 +60,7 @@
     <Compile Include="Model\ModelListItem.cs" />
     <Compile Include="Paint\PaintCreate.cs" />
     <Compile Include="Paint\PaintDetail.cs" />
+    <Compile Include="Paint\PaintEdit.cs" />
     <Compile Include="Paint\PaintListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
