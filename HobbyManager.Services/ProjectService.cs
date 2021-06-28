@@ -56,5 +56,41 @@ namespace HobbyManager.Services
                 return query.ToArray();
             }
         }
+
+        public ProjectDetail GetProjectById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Projects
+                    .Single(e => e.ProjectId == id && e.OwnerId == _userId);
+                return
+                    new ProjectDetail
+                    {
+                        ProjectId = entity.ProjectId,
+                        Name = entity.Name,
+                        StartDate = entity.StartDate,
+                        FinishDate = entity.FinishDate
+                    };
+            }
+        }
+
+        public bool UpdateProject(ProjectEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Projects
+                    .Single(e => e.ProjectId == model.ProjectId && e.OwnerId == _userId);
+
+                entity.Name = model.Name;
+                entity.StartDate = model.StartDate;
+                entity.FinishDate = model.FinishDate;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

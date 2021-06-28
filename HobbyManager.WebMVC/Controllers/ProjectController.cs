@@ -47,6 +47,56 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
+        //GET: ProjectDetails
+        public ActionResult Details(int id)
+        {
+            var svc = CreateProjectService();
+            var model = svc.GetProjectById(id);
+
+            return View(model);
+        }
+
+        //GET: ProjectEdit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateProjectService();
+            var detail = service.GetProjectById(id);
+            var model =
+                new ProjectEdit
+                {
+                    ProjectId = detail.ProjectId,
+                    Name = detail.Name,
+                    StartDate = detail.StartDate,
+                    FinishDate = detail.FinishDate
+                };
+            return View(model);
+        }
+
+        //POST: ProjectEdit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ProjectEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ProjectId != id)
+            {
+                ModelState.AddModelError("", "Id did not match.");
+                return View(model);
+            }
+
+            var service = CreateProjectService();
+
+            if (service.UpdateProject(model))
+            {
+                TempData["SaveResult"] = "Your project was successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your project could not be updated.");
+            return View();
+        }
+
         private ProjectService CreateProjectService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
