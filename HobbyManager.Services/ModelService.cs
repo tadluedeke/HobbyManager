@@ -56,5 +56,24 @@ namespace HobbyManager.Services
                 return query.ToArray();
             }
         }
+
+        public ModelDetail GetModelById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Models
+                    .Single(e => e.ModelId == id && e.OwnerId == _userId);
+                return
+                    new ModelDetail
+                    {
+                        ModelId = entity.ModelId,
+                        Name = entity.Name,
+                        Scale = entity.Scale,
+                        Brand = entity.Brand
+                    };
+            }
+        }
     }
 }
