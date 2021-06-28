@@ -1,4 +1,6 @@
 ﻿using HobbyManager.Models.Project;
+using HobbyManager.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace HobbyManager.WebMVC.Controllers
         // GET: Project
         public ActionResult Index()
         {
-            var model = new ProjectListItem[0];
+            var service = CreateProjectService();
+            var model = service.GetProjects();
+
             return View(model);
         }
 
@@ -28,10 +32,26 @@ namespace HobbyManager.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProjectCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreateProjectService();
+
+            if (service.CreateProject(model))
+            {
+                TempData["SaveResult"] = "Your project was successfully created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Project could not be created.");
+
             return View(model);
+        }
+
+        private ProjectService CreateProjectService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProjectService(userId);
+            return service;
+        }
     }
 }
