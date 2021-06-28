@@ -92,5 +92,20 @@ namespace HobbyManager.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteModel(int modelId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Models
+                    .Single(e => e.ModelId == modelId && e.OwnerId == _userId);
+
+                ctx.Models.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

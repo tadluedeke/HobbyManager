@@ -40,7 +40,7 @@ namespace HobbyManager.WebMVC.Controllers
 
             if (service.CreateModel(model))
             {
-                TempData["SaveResult"] = "Your model was created.";
+                TempData["SaveResult"] = "Your model was successfully created.";
                 return RedirectToAction("Index");
             };
 
@@ -58,7 +58,7 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
-        // ModelEdit
+        // GET: ModelEdit
         public ActionResult Edit(int id)
         {
             var service = CreateModelService();
@@ -72,6 +72,56 @@ namespace HobbyManager.WebMVC.Controllers
                     Brand = detail.Brand
                 };
             return View(model);
+        }
+
+        // POST: ModelEdit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ModelEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.ModelId != id)
+            {
+                ModelState.AddModelError("", "Id did not match.");
+                return View(model);
+            }
+
+            var service = CreateModelService();
+
+            if (service.UpdateModel(model))
+            {
+                TempData["SaveResult"] = "Your model was successfully updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your model could not be updated.");
+            return View();
+        }
+
+        // GET: ModelDelete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateModelService();
+            var model = svc.GetModelById(id);
+
+            return View(model);
+        }
+
+        // Post: ModelDelete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteModel(int id)
+        {
+            var service = CreateModelService();
+
+            service.DeleteModel(id);
+
+            TempData["SaveResult"] = "Your model was successfully deleted.";
+
+            return RedirectToAction("Index");
         }
 
         private ModelService CreateModelService()
