@@ -13,7 +13,7 @@ namespace HobbyManager.Models.Project
         public string Name { get; set; }
 
         [Display(Name = "Started")]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
     }
 }

@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202106282150466_InitialMigration.Designer.cs">
       <DependentUpon>202106282150466_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106291349191_DateTimeFix.cs" />
+    <Compile Include="Migrations\202106291349191_DateTimeFix.Designer.cs">
+      <DependentUpon>202106291349191_DateTimeFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Paint.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106282150466_InitialMigration.resx">
       <DependentUpon>202106282150466_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291349191_DateTimeFix.resx">
+      <DependentUpon>202106291349191_DateTimeFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

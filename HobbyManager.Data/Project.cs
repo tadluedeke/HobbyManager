@@ -22,9 +22,9 @@ namespace HobbyManager.Data
 
         [Required]
         [Display(Name ="Started")]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         [Display(Name="Finished")]
-        public DateTime? FinishDate { get; set; }
+        public DateTimeOffset? FinishDate { get; set; }
     }
 }
