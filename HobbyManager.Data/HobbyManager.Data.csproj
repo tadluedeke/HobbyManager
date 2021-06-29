@@ -55,17 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106252043285_InitialCreate.cs" />
-    <Compile Include="Migrations\202106252043285_InitialCreate.Designer.cs">
-      <DependentUpon>202106252043285_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106282150466_InitialMigration.cs" />
-    <Compile Include="Migrations\202106282150466_InitialMigration.Designer.cs">
-      <DependentUpon>202106282150466_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291349191_DateTimeFix.cs" />
-    <Compile Include="Migrations\202106291349191_DateTimeFix.Designer.cs">
-      <DependentUpon>202106291349191_DateTimeFix.cs</DependentUpon>
+    <Compile Include="Migrations\202106291546204_InitialMigration.cs" />
+    <Compile Include="Migrations\202106291546204_InitialMigration.Designer.cs">
+      <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
@@ -79,14 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106252043285_InitialCreate.resx">
-      <DependentUpon>202106252043285_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106282150466_InitialMigration.resx">
-      <DependentUpon>202106282150466_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291349191_DateTimeFix.resx">
-      <DependentUpon>202106291349191_DateTimeFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106291546204_InitialMigration.resx">
+      <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

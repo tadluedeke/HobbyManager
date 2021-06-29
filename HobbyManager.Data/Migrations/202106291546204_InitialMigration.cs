@@ -3,7 +3,7 @@ namespace HobbyManager.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -29,20 +29,8 @@ namespace HobbyManager.Data.Migrations
                         Name = c.String(nullable: false),
                         Color = c.String(),
                         SKU = c.String(),
-                        Workflow_WorkflowId = c.Int(),
-                        Workflow_WorkflowId1 = c.Int(),
-                        Workflow_WorkflowId2 = c.Int(),
-                        Workflow_WorkflowId3 = c.Int(),
                     })
-                .PrimaryKey(t => t.PaintId)
-                .ForeignKey("dbo.Workflow", t => t.Workflow_WorkflowId)
-                .ForeignKey("dbo.Workflow", t => t.Workflow_WorkflowId1)
-                .ForeignKey("dbo.Workflow", t => t.Workflow_WorkflowId2)
-                .ForeignKey("dbo.Workflow", t => t.Workflow_WorkflowId3)
-                .Index(t => t.Workflow_WorkflowId)
-                .Index(t => t.Workflow_WorkflowId1)
-                .Index(t => t.Workflow_WorkflowId2)
-                .Index(t => t.Workflow_WorkflowId3);
+                .PrimaryKey(t => t.PaintId);
             
             CreateTable(
                 "dbo.Project",
@@ -51,8 +39,8 @@ namespace HobbyManager.Data.Migrations
                         ProjectId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 30),
-                        StartDate = c.DateTime(nullable: false),
-                        FinishDate = c.DateTime(nullable: false),
+                        StartDate = c.DateTimeOffset(nullable: false, precision: 7),
+                        FinishDate = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ProjectId);
             
@@ -132,34 +120,47 @@ namespace HobbyManager.Data.Migrations
                     {
                         WorkflowId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
+                        Color = c.String(),
+                        BaseCoat_PaintId = c.Int(),
+                        HighlightTwo_PaintId = c.Int(),
+                        HightlightOne_PaintId = c.Int(),
                         Prime_PaintId = c.Int(),
+                        Shade_PaintId = c.Int(),
                     })
                 .PrimaryKey(t => t.WorkflowId)
+                .ForeignKey("dbo.Paint", t => t.BaseCoat_PaintId)
+                .ForeignKey("dbo.Paint", t => t.HighlightTwo_PaintId)
+                .ForeignKey("dbo.Paint", t => t.HightlightOne_PaintId)
                 .ForeignKey("dbo.Paint", t => t.Prime_PaintId)
-                .Index(t => t.Prime_PaintId);
+                .ForeignKey("dbo.Paint", t => t.Shade_PaintId)
+                .Index(t => t.BaseCoat_PaintId)
+                .Index(t => t.HighlightTwo_PaintId)
+                .Index(t => t.HightlightOne_PaintId)
+                .Index(t => t.Prime_PaintId)
+                .Index(t => t.Shade_PaintId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Paint", "Workflow_WorkflowId3", "dbo.Workflow");
+            DropForeignKey("dbo.Workflow", "Shade_PaintId", "dbo.Paint");
             DropForeignKey("dbo.Workflow", "Prime_PaintId", "dbo.Paint");
-            DropForeignKey("dbo.Paint", "Workflow_WorkflowId2", "dbo.Workflow");
-            DropForeignKey("dbo.Paint", "Workflow_WorkflowId1", "dbo.Workflow");
-            DropForeignKey("dbo.Paint", "Workflow_WorkflowId", "dbo.Workflow");
+            DropForeignKey("dbo.Workflow", "HightlightOne_PaintId", "dbo.Paint");
+            DropForeignKey("dbo.Workflow", "HighlightTwo_PaintId", "dbo.Paint");
+            DropForeignKey("dbo.Workflow", "BaseCoat_PaintId", "dbo.Paint");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropIndex("dbo.Workflow", new[] { "Shade_PaintId" });
             DropIndex("dbo.Workflow", new[] { "Prime_PaintId" });
+            DropIndex("dbo.Workflow", new[] { "HightlightOne_PaintId" });
+            DropIndex("dbo.Workflow", new[] { "HighlightTwo_PaintId" });
+            DropIndex("dbo.Workflow", new[] { "BaseCoat_PaintId" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Paint", new[] { "Workflow_WorkflowId3" });
-            DropIndex("dbo.Paint", new[] { "Workflow_WorkflowId2" });
-            DropIndex("dbo.Paint", new[] { "Workflow_WorkflowId1" });
-            DropIndex("dbo.Paint", new[] { "Workflow_WorkflowId" });
             DropTable("dbo.Workflow");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");

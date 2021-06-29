@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,18 +20,25 @@ namespace HobbyManager.Data
         public string Color { get; set; }
 
         [Display(Name ="Primer used")]
-        public Paint Prime { get; set; }
+        [ForeignKey(nameof(Paints))]
+        public int PrimeId { get; set; }
 
         [Display(Name ="Base coat paint used")]
-        public Paint BaseCoat { get; set; }
+        [ForeignKey(nameof(Paints))]
+        public int BaseCoatId { get; set; }
 
         [Display(Name ="Wash used")]
-        public Paint Shade { get; set; }
+        [ForeignKey(nameof(Paints))]
+        public int ShadeId { get; set; }
 
         [Display(Name ="First hightlight paint used")]
-        public Paint HightlightOne { get; set; }
+        [ForeignKey(nameof(Paints))]
+        public int HightlightOneId { get; set; }
+        //public virtual Paint Paintss { get; set; }
 
         [Display(Name ="Second highlight paint used")]
-        public Paint HighlightTwo { get; set; }
+        [ForeignKey(nameof(Paints))]
+        public int HighlightTwoId { get; set; }
+        public virtual Paint Paints { get; set; }
     }
 }

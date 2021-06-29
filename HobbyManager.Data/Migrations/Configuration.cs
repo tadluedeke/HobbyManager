@@ -10,7 +10,6 @@ namespace HobbyManager.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "HobbyManager.Data.ApplicationDbContext";
         }
 
         protected override void Seed(HobbyManager.Data.ApplicationDbContext context)

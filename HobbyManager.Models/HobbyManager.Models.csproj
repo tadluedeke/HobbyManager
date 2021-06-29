@@ -67,10 +67,18 @@
     <Compile Include="Project\ProjectEdit.cs" />
     <Compile Include="Project\ProjectListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow\WorkflowCreate.cs" />
+    <Compile Include="Workflow\WorkflowListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HobbyManager.Data\HobbyManager.Data.csproj">
+      <Project>{e420fd7b-5ea5-4a21-987d-b4b7f4aa8cb7}</Project>
+      <Name>HobbyManager.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
