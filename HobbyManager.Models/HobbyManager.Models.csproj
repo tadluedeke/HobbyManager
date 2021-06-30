@@ -68,6 +68,8 @@
     <Compile Include="Project\ProjectListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflow\WorkflowCreate.cs" />
+    <Compile Include="Workflow\WorkflowDetail.cs" />
+    <Compile Include="Workflow\WorkflowEdit.cs" />
     <Compile Include="Workflow\WorkflowListItem.cs" />
   </ItemGroup>
   <ItemGroup>

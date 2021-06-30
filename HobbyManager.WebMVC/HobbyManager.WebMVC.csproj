@@ -256,6 +256,9 @@
     <Content Include="Views\Project\Delete.cshtml" />
     <Content Include="Views\Workflow\Index.cshtml" />
     <Content Include="Views\Workflow\Create.cshtml" />
+    <Content Include="Views\Workflow\Details.cshtml" />
+    <Content Include="Views\Workflow\Edit.cshtml" />
+    <Content Include="Views\Workflow\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

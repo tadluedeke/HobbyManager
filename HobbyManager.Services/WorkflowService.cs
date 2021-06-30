@@ -55,5 +55,62 @@ namespace HobbyManager.Services
                 return query.ToArray();
             }
         }
+
+        public WorkflowDetail GetWorkflowById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Workflows
+                    .Single(e => e.WorkflowId == id && e.OwnerId == _userId);
+                return
+                    new WorkflowDetail
+                    {
+                        WorkflowId = entity.WorkflowId,
+                        Color = entity.Color,
+                        PrimeId = entity.PrimeId,
+                        BaseCoatId = entity.BaseCoatId,
+                        ShadeId = entity.ShadeId,
+                        HighlightOneId = entity.HightlightOneId,
+                        HighlightTwoId = entity.HighlightTwoId
+                    };
+            }
+        }
+
+        public bool UpdateWorkflow(WorkflowEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Workflows
+                    .Single(e => e.WorkflowId == model.WorkflowId && e.OwnerId == _userId);
+
+                entity.Color = model.Color;
+                entity.PrimeId = model.PrimeId;
+                entity.BaseCoatId = model.BaseCoatId;
+                entity.ShadeId = model.ShadeId;
+                entity.HightlightOneId = model.HighlightOneId;
+                entity.HighlightTwoId = model.HighlightTwoId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteWorkflow(int workflowId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Workflows
+                    .Single(e => e.WorkflowId == workflowId && e.OwnerId == _userId);
+
+                ctx.Workflows.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

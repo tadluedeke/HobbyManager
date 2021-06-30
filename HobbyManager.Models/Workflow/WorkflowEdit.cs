@@ -1,6 +1,4 @@
-﻿using HobbyManager.Models.Paint;
-using HobbyManager.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace HobbyManager.Models.Workflow
 {
-    public class WorkflowCreate
+    public class WorkflowEdit
     {
+        public int WorkflowId { get; set; }
+
         [Required]
         [Display(Name = "Overall Color or Object Painted")]
         public string Color { get; set; }
