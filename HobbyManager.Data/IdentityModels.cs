@@ -47,6 +47,36 @@ namespace HobbyManager.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Workflow>()
+                .HasRequired(m => m.Primer)
+                .WithMany(m => m.Primers)
+                .HasForeignKey(m => m.PrimeId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Workflow>()
+                .HasRequired(m => m.BaseCoat)
+                .WithMany(m => m.BaseCoat)
+                .HasForeignKey(m => m.BaseCoatId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Workflow>()
+                .HasRequired(m => m.Shade)
+                .WithMany(m => m.Shade)
+                .HasForeignKey(m => m.ShadeId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Workflow>()
+                .HasRequired(m => m.HighlightOne)
+                .WithMany(m => m.HighlightOne)
+                .HasForeignKey(m => m.HightlightOneId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Workflow>()
+                .HasRequired(m => m.SecondHighlight)
+                .WithMany(m => m.SecondHighlight)
+                .HasForeignKey(m => m.HighlightTwoId)
+                .WillCascadeOnDelete(false);
         }
     }
 

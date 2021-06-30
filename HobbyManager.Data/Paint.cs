@@ -24,5 +24,11 @@ namespace HobbyManager.Data
         public string Color { get; set; }
 
         public string SKU { get; set; }
+
+        public virtual ICollection<Workflow> Primers { get; set; }
+        public virtual ICollection<Workflow> BaseCoat { get; set; }
+        public virtual ICollection<Workflow> Shade { get; set; }
+        public virtual ICollection<Workflow> HighlightOne { get; set; }
+        public virtual ICollection<Workflow> SecondHighlight { get; set; }
     }
 }

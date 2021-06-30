@@ -1,4 +1,5 @@
 ﻿using HobbyManager.Data;
+using HobbyManager.Models.Paint;
 using HobbyManager.Models.Workflow;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HobbyManager.Services
                     HightlightOneId = model.HighlightOneId,
                     HighlightTwoId = model.HighlightTwoId
                 };
-            
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Workflows.Add(entity);
@@ -70,7 +71,15 @@ namespace HobbyManager.Services
                         WorkflowId = entity.WorkflowId,
                         Color = entity.Color,
                         PrimeId = entity.PrimeId,
+                        Primer = new PaintDetail
+                        {
+                            Name = entity.Primer.Name
+                        },
                         BaseCoatId = entity.BaseCoatId,
+                        BaseCoat = new PaintDetail
+                        {
+                            Name = entity.BaseCoat.Name
+                        },
                         ShadeId = entity.ShadeId,
                         HighlightOneId = entity.HightlightOneId,
                         HighlightTwoId = entity.HighlightTwoId
@@ -80,7 +89,7 @@ namespace HobbyManager.Services
 
         public bool UpdateWorkflow(WorkflowEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx

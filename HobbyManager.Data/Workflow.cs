@@ -20,25 +20,28 @@ namespace HobbyManager.Data
         public string Color { get; set; }
 
         [Display(Name ="Primer used")]
-        [ForeignKey(nameof(Paints))]
+        //[ForeignKey(nameof(Primer))]
         public int PrimeId { get; set; }
 
-        [Display(Name ="Base coat paint used")]
-        [ForeignKey(nameof(Paints))]
+        [Display(Name = "Base coat paint used")]
+        //[ForeignKey(nameof(BaseCoat))]
         public int BaseCoatId { get; set; }
 
-        [Display(Name ="Wash used")]
-        [ForeignKey(nameof(Paints))]
+        [Display(Name = "Wash used")]
+        //[ForeignKey(nameof(Shade))]
         public int ShadeId { get; set; }
 
-        [Display(Name ="First hightlight paint used")]
-        [ForeignKey(nameof(Paints))]
+        [Display(Name = "First hightlight paint used")]
+        //[ForeignKey(nameof(HighlightOne)]
         public int HightlightOneId { get; set; }
-        //public virtual Paint Paintss { get; set; }
 
-        [Display(Name ="Second highlight paint used")]
-        [ForeignKey(nameof(Paints))]
+        [Display(Name = "Second highlight paint used")]
+        //[ForeignKey(nameof(ThisIsATest))]
         public int HighlightTwoId { get; set; }
-        public virtual Paint Paints { get; set; }
+        public virtual Paint Primer { get; set; }
+        public virtual Paint BaseCoat { get; set; }
+        public virtual Paint Shade { get; set; }
+        public virtual Paint HighlightOne { get; set; }
+        public virtual Paint SecondHighlight { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using HobbyManager.Data;
 using HobbyManager.Models.Paint;
+using HobbyManager.Models.Workflow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace HobbyManager.Services
                             PaintId = e.PaintId,
                             Brand = e.Brand,
                             Name = e.Name,
-                            Color = e.Color
+                            Color = e.Color,
                         }
                         );
                 return query.ToArray();

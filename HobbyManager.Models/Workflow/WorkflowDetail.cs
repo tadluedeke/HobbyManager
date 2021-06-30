@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HobbyManager.Models.Paint;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,5 +29,9 @@ namespace HobbyManager.Models.Workflow
 
         [Display(Name = "Highlight Two")]
         public int HighlightTwoId { get; set; }
+
+        public virtual PaintDetail Primer { get; set; }
+        public virtual PaintDetail BaseCoat { get; set; }
+
     }
 }

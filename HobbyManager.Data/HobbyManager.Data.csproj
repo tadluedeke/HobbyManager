@@ -59,6 +59,22 @@
     <Compile Include="Migrations\202106291546204_InitialMigration.Designer.cs">
       <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106301835478_UpdateWorkflow.cs" />
+    <Compile Include="Migrations\202106301835478_UpdateWorkflow.Designer.cs">
+      <DependentUpon>202106301835478_UpdateWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301839409_TestingModelBuilderFK.cs" />
+    <Compile Include="Migrations\202106301839409_TestingModelBuilderFK.Designer.cs">
+      <DependentUpon>202106301839409_TestingModelBuilderFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301842025_TestingModelBuilderFK2.cs" />
+    <Compile Include="Migrations\202106301842025_TestingModelBuilderFK2.Designer.cs">
+      <DependentUpon>202106301842025_TestingModelBuilderFK2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301845576_TestingModelBuilderFK3.cs" />
+    <Compile Include="Migrations\202106301845576_TestingModelBuilderFK3.Designer.cs">
+      <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Paint.cs" />
@@ -73,6 +89,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106291546204_InitialMigration.resx">
       <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301835478_UpdateWorkflow.resx">
+      <DependentUpon>202106301835478_UpdateWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301839409_TestingModelBuilderFK.resx">
+      <DependentUpon>202106301839409_TestingModelBuilderFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301842025_TestingModelBuilderFK2.resx">
+      <DependentUpon>202106301842025_TestingModelBuilderFK2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301845576_TestingModelBuilderFK3.resx">
+      <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
