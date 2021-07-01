@@ -264,6 +264,7 @@
     <Content Include="Views\ProjectWorkflow\Create.cshtml" />
     <Content Include="Views\ProjectWorkflow\Details.cshtml" />
     <Content Include="Views\ProjectWorkflow\Edit.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -88,6 +88,21 @@ namespace HobbyManager.Services
             }
         }
 
+        public bool DeleteProjectWorkflow(int projectWorkflowId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .ProjectWorkflows
+                    .Single(e => e.ProjectWorkflowId == projectWorkflowId && e.OwnerId == _userId);
+
+                ctx.ProjectWorkflows.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 
 }

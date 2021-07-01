@@ -96,6 +96,30 @@ namespace HobbyManager.WebMVC.Controllers
             return View(model);
         }
 
+        //GET: ProjectWorkflowDelete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateProjectWorkflowService();
+            var model = svc.GetProjectWorkflowById(id);
+
+            return View(model);
+        }
+
+        //POST: ProjectWorkflowDelete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteProjectWorkflow(int id)
+        {
+            var service = CreateProjectWorkflowService();
+
+            service.DeleteProjectWorkflow(id);
+
+            TempData["SaveResult"] = "Your ProjectWorkflow was successfully deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private ProjectWorkflowService CreateProjectWorkflowService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
