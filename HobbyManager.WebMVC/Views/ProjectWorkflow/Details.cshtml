@@ -1,0 +1,42 @@
+﻿@model HobbyManager.Models.ProjectWorkflow.ProjectWorkflowDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectWorkflowDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectWorkflowId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectWorkflowId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkflowId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkflowId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectWorkflowId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

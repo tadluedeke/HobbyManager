@@ -38,6 +38,10 @@
                     {
                         <li>@Html.ActionLink("Workflows", "Index", "Workflow")</li>
                     }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("ProjectWorkflows", "Index", "ProjectWorkflow")</li>
+                    }
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>

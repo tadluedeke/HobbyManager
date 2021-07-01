@@ -75,10 +75,15 @@
     <Compile Include="Migrations\202106301845576_TestingModelBuilderFK3.Designer.cs">
       <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011751457_ErrorSaysTo1.cs" />
+    <Compile Include="Migrations\202107011751457_ErrorSaysTo1.Designer.cs">
+      <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Paint.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="ProjectWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workflow.cs" />
   </ItemGroup>
@@ -101,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106301845576_TestingModelBuilderFK3.resx">
       <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011751457_ErrorSaysTo1.resx">
+      <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
