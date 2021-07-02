@@ -1,0 +1,71 @@
+﻿@model HobbyManager.Models.Workflow.WorkflowDetail
+
+@{
+    ViewBag.Title = "Details";
+    var primerbrand = Model.Primer.Brand;
+    var primercolor = Model.Primer.Name;
+    var basecoatbrand = Model.BaseCoat.Name;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkflowDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Primer.Name)
+        </dt>
+
+        <dd>
+            @primercolor - @primerbrand
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseCoatId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaseCoatId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShadeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShadeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HighlightOneId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HighlightOneId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HighlightTwoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HighlightTwoId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WorkflowId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
