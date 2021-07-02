@@ -37,6 +37,7 @@ namespace HobbyManager.Data
         public DbSet<Workflow> Workflows { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectWorkflow> ProjectWorkflows { get; set; }
+        public DbSet<ProjectModel> ProjectModels { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

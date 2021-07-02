@@ -42,6 +42,10 @@
                     {
                         <li>@Html.ActionLink("ProjectWorkflows", "Index", "ProjectWorkflow")</li>
                     }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("ProjectModels", "Index", "ProjectModel")</li>
+                    }
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>

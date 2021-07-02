@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="ModelService.cs" />
     <Compile Include="PaintService.cs" />
+    <Compile Include="ProjectModelService.cs" />
     <Compile Include="ProjectService.cs" />
     <Compile Include="ProjectWorkflowService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

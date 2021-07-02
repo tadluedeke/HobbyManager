@@ -62,6 +62,10 @@
     <Compile Include="Paint\PaintDetail.cs" />
     <Compile Include="Paint\PaintEdit.cs" />
     <Compile Include="Paint\PaintListItem.cs" />
+    <Compile Include="ProjectModel\ProjectModelCreate.cs" />
+    <Compile Include="ProjectModel\ProjectModelDetail.cs" />
+    <Compile Include="ProjectModel\ProjectModelEdit.cs" />
+    <Compile Include="ProjectModel\ProjectModelListItem.cs" />
     <Compile Include="ProjectWorkflow\ProjectWorkflowCreate.cs" />
     <Compile Include="ProjectWorkflow\ProjectWorkflowDetail.cs" />
     <Compile Include="ProjectWorkflow\ProjectWorkflowEdit.cs" />

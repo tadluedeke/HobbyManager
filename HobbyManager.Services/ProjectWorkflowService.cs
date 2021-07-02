@@ -22,8 +22,8 @@ namespace HobbyManager.Services
                 new ProjectWorkflow()
                 {
                     OwnerId = _userId,
-                    WorkflowId = model.WorkflowId,
-                    ProjectId = model.ProjectId
+                    ProjectId = model.ProjectId,
+                    WorkflowId = model.WorkflowId
                 };
             using (var ctx2 = new ApplicationDbContext())
             {

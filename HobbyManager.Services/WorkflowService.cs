@@ -17,6 +17,7 @@ namespace HobbyManager.Services
         {
             _userId = userId;
         }
+
         public bool CreateWorkflow(WorkflowCreate model)
         {
             var entity =
@@ -73,7 +74,8 @@ namespace HobbyManager.Services
                         PrimeId = entity.PrimeId,
                         Primer = new PaintDetail
                         {
-                            Name = entity.Primer.Name
+                            Name = entity.Primer.Name,
+                            Brand = entity.Primer.Brand
                         },
                         BaseCoatId = entity.BaseCoatId,
                         BaseCoat = new PaintDetail

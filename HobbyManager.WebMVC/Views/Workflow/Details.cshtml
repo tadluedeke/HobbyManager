@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Details";
+    var primerbrand = Model.Primer.Brand;
+    var primercolor = Model.Primer.Name;
+    var basecoatbrand = Model.BaseCoat.Name;
 }
 
 <h2>Details</h2>
@@ -10,13 +13,7 @@
     <h4>WorkflowDetail</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.WorkflowId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WorkflowId)
-        </dd>
+        
 
         <dt>
             @Html.DisplayNameFor(model => model.Color)
@@ -27,11 +24,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PrimeId)
+            @Html.DisplayNameFor(model => model.Primer.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PrimeId)
+            @primercolor - @primerbrand
         </dd>
 
         <dt>

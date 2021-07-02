@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\PaintController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectModelController.cs" />
     <Compile Include="Controllers\ProjectWorkflowController.cs" />
     <Compile Include="Controllers\WorkflowController.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +266,11 @@
     <Content Include="Views\ProjectWorkflow\Details.cshtml" />
     <Content Include="Views\ProjectWorkflow\Edit.cshtml" />
     <Content Include="Views\ProjectWorkflow\Delete.cshtml" />
+    <Content Include="Views\ProjectModel\Index.cshtml" />
+    <Content Include="Views\ProjectModel\Create.cshtml" />
+    <Content Include="Views\ProjectModel\Details.cshtml" />
+    <Content Include="Views\ProjectModel\Edit.cshtml" />
+    <Content Include="Views\ProjectModel\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
