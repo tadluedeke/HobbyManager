@@ -79,6 +79,10 @@
     <Compile Include="Migrations\202107011751457_ErrorSaysTo1.Designer.cs">
       <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107051807553_UpdatingTablesForViews.cs" />
+    <Compile Include="Migrations\202107051807553_UpdatingTablesForViews.Designer.cs">
+      <DependentUpon>202107051807553_UpdatingTablesForViews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Paint.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011751457_ErrorSaysTo1.resx">
       <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051807553_UpdatingTablesForViews.resx">
+      <DependentUpon>202107051807553_UpdatingTablesForViews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

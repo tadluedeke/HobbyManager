@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
     var primerBrand = Model.Primer.Brand;
-    var primerColor = Model.Primer.Name;
+    var primerName = Model.Primer.Name;
     var basecoatName = Model.BaseCoat.Name;
     var shadeName = Model.Shade.Name;
     var highlightOneName = Model.HighlightOne.Name;
@@ -27,11 +27,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Primer.Name)
+            @Html.DisplayNameFor(model => model.PrimeId)
         </dt>
 
         <dd>
-            @primerColor - @primerBrand
+            @primerName - @primerBrand
         </dd>
 
         <dt>
@@ -39,7 +39,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BaseCoatId)
+            @basecoatName
         </dd>
 
         <dt>
@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ShadeId)
+            @shadeName
         </dd>
 
         <dt>
@@ -55,7 +55,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HighlightOneId)
+            @highlightOneName
         </dd>
 
         <dt>
@@ -63,7 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HighlightTwoId)
+            @hightlightTwoName
         </dd>
 
     </dl>
