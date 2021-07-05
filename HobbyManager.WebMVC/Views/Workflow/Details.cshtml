@@ -2,9 +2,12 @@
 
 @{
     ViewBag.Title = "Details";
-    var primerbrand = Model.Primer.Brand;
-    var primercolor = Model.Primer.Name;
-    var basecoatbrand = Model.BaseCoat.Name;
+    var primerBrand = Model.Primer.Brand;
+    var primerColor = Model.Primer.Name;
+    var basecoatName = Model.BaseCoat.Name;
+    var shadeName = Model.Shade.Name;
+    var highlightOneName = Model.HighlightOne.Name;
+    var hightlightTwoName = Model.SecondHighlight.Name;
 }
 
 <h2>Details</h2>
@@ -28,7 +31,7 @@
         </dt>
 
         <dd>
-            @primercolor - @primerbrand
+            @primerColor - @primerBrand
         </dd>
 
         <dt>

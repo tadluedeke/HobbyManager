@@ -83,8 +83,20 @@ namespace HobbyManager.Services
                             Name = entity.BaseCoat.Name
                         },
                         ShadeId = entity.ShadeId,
+                        Shade = new PaintDetail
+                        {
+                            Name = entity.Shade.Name
+                        },
                         HighlightOneId = entity.HightlightOneId,
-                        HighlightTwoId = entity.HighlightTwoId
+                        HighlightOne = new PaintDetail
+                        {
+                            Name = entity.HighlightOne.Name
+                        },
+                        HighlightTwoId = entity.HighlightTwoId,
+                        SecondHighlight = new PaintDetail
+                        {
+                            Name = entity.SecondHighlight.Name
+                        }
                     };
             }
         }
