@@ -24,6 +24,7 @@ namespace HobbyManager.Services
                 new Workflow()
                 {
                     OwnerId = _userId,
+                    Color = model.Color,
                     PrimeId = model.PrimeId,
                     BaseCoatId = model.BaseCoatId,
                     ShadeId = model.ShadeId,

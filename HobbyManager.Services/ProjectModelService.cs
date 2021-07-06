@@ -1,4 +1,6 @@
 ﻿using HobbyManager.Data;
+using HobbyManager.Models.Model;
+using HobbyManager.Models.Project;
 using HobbyManager.Models.ProjectModel;
 using System;
 using System.Collections.Generic;
@@ -48,7 +50,15 @@ namespace HobbyManager.Services
                         {
                             ProjectModelId = e.ProjectModelId,
                             ProjectId = e.ProjectId,
-                            ModelId = e.ModelId
+                            Project = new ProjectDetail
+                            {
+                                Name = e.Project.Name
+                            },
+                            ModelId = e.ModelId,
+                            Model = new ModelDetail
+                            {
+                                Name = e.Model.Name
+                            }
                         }
                         );
                 return query.ToArray();
@@ -68,7 +78,15 @@ namespace HobbyManager.Services
                     {
                         ProjectModelId = entity.ProjectModelId,
                         ProjectId = entity.ProjectId,
-                        ModelId = entity.ModelId
+                        Project = new ProjectDetail
+                        {
+                            Name = entity.Project.Name
+                        },
+                        ModelId = entity.ModelId,
+                        Model = new ModelDetail
+                        {
+                            Name = entity.Model.Name
+                        }
                     };
             }
         }
