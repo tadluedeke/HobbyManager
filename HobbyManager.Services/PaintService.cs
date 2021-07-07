@@ -18,6 +18,23 @@ namespace HobbyManager.Services
             _userId = userId;
         }
 
+        public PaintService()
+        {
+
+        }
+
+        public IEnumerable<Paint> GetPaintsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Paints
+                .Where(e => e.OwnerId == _userId);
+                return ctx.Paints.ToList();
+            }
+        }
+
         public bool CreatePaint(PaintCreate model)
         {
             var entity =

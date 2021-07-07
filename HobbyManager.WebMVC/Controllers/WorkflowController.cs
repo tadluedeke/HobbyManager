@@ -1,4 +1,5 @@
-﻿using HobbyManager.Models.Workflow;
+﻿using HobbyManager.Data;
+using HobbyManager.Models.Workflow;
 using HobbyManager.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -23,6 +24,15 @@ namespace HobbyManager.WebMVC.Controllers
         //GET: WorkflowCreate
         public ActionResult Create()
         {
+            List<Paint> Paints = (new PaintService()).GetPaintsList().ToList();
+            var query = from p in Paints
+                        select new SelectListItem()
+                        {
+                            Value = p.PrimeId.ToString(),
+                            Text = p.Name
+                        };
+            ViewBag.PaintId = query.ToList();
+
             return View();
         }
 

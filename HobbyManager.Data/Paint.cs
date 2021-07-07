@@ -30,5 +30,7 @@ namespace HobbyManager.Data
         public virtual ICollection<Workflow> Shade { get; set; }
         public virtual ICollection<Workflow> HighlightOne { get; set; }
         public virtual ICollection<Workflow> SecondHighlight { get; set; }
+
+        public virtual Workflow PrimeId { get; set; }
     }
 }
