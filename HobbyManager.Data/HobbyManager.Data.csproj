@@ -87,6 +87,10 @@
     <Compile Include="Migrations\202107071501534_Dropdown.Designer.cs">
       <DependentUpon>202107071501534_Dropdown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107071710285_Dropdown2.cs" />
+    <Compile Include="Migrations\202107071710285_Dropdown2.Designer.cs">
+      <DependentUpon>202107071710285_Dropdown2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Paint.cs" />
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071501534_Dropdown.resx">
       <DependentUpon>202107071501534_Dropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071710285_Dropdown2.resx">
+      <DependentUpon>202107071710285_Dropdown2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
