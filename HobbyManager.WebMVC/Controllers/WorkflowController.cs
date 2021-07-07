@@ -28,11 +28,16 @@ namespace HobbyManager.WebMVC.Controllers
             var query = from p in Paints
                         select new SelectListItem()
                         {
-                            Value = p.PrimeId.ToString(),
-                            Text = p.Name
+                            Value = p.PaintId.ToString(),
+                            Text = p.Name,
                         };
             ViewBag.PaintId = query.ToList();
-
+            ViewData["Paints"] = from p in Paints
+                                 select new SelectListItem()
+                                 {
+                                     Value = p.PaintId.ToString(),
+                                     Text = p.Name,
+                                 };
             return View();
         }
 

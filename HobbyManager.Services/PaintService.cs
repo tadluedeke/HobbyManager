@@ -27,10 +27,6 @@ namespace HobbyManager.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query =
-                    ctx
-                    .Paints
-                .Where(e => e.OwnerId == _userId);
                 return ctx.Paints.ToList();
             }
         }
