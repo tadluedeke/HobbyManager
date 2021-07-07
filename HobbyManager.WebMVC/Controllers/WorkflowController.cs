@@ -74,6 +74,22 @@ namespace HobbyManager.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateWorkflowService();
+
+            List<Paint> Paints = (new PaintService()).GetPaintsList().ToList();
+            var query = from p in Paints
+                        select new SelectListItem()
+                        {
+                            Value = p.PaintId.ToString(),
+                            Text = p.Name,
+                        };
+            ViewBag.PaintId = query.ToList();
+            ViewData["Paints"] = from p in Paints
+                                 select new SelectListItem()
+                                 {
+                                     Value = p.PaintId.ToString(),
+                                     Text = p.Name,
+                                 };
+
             var detail = service.GetWorkflowById(id);
             var model =
                 new WorkflowEdit
