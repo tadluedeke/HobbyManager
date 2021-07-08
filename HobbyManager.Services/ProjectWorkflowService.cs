@@ -1,5 +1,7 @@
 ﻿using HobbyManager.Data;
+using HobbyManager.Models.Project;
 using HobbyManager.Models.ProjectWorkflow;
+using HobbyManager.Models.Workflow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +27,10 @@ namespace HobbyManager.Services
                     ProjectId = model.ProjectId,
                     WorkflowId = model.WorkflowId
                 };
-            using (var ctx2 = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                ctx2.ProjectWorkflows.Add(entity);
-                return ctx2.SaveChanges() == 1;
+                ctx.ProjectWorkflows.Add(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
 
@@ -46,7 +48,15 @@ namespace HobbyManager.Services
                         {
                             ProjectWorkflowId = e.ProjectWorkflowId,
                             ProjectId = e.ProjectId,
-                            WorkflowId = e.WorkflowId
+                            Project = new ProjectDetail
+                            {
+                                Name = e.Project.Name
+                            },
+                            WorkflowId = e.WorkflowId,
+                            Workflow = new WorkflowDetail
+                            {
+                                Color = e.Workflow.Color
+                            }
                         }
                         );
                 return query.ToArray();
@@ -66,7 +76,15 @@ namespace HobbyManager.Services
                     {
                         ProjectWorkflowId = entity.ProjectWorkflowId,
                         ProjectId = entity.ProjectId,
-                        WorkflowId = entity.WorkflowId
+                        Project = new ProjectDetail
+                        {
+                            Name = entity.Project.Name
+                        },
+                        WorkflowId = entity.WorkflowId,
+                        Workflow = new WorkflowDetail
+                        {
+                            Color = entity.Workflow.Color
+                        }
                     };
             }
         }

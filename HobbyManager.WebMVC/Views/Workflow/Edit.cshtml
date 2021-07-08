@@ -27,7 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PrimeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PrimeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.PrimeId, ViewBag.Paints as IEnumerable<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PrimeId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.BaseCoatId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BaseCoatId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.BaseCoatId, ViewBag.Paints as IEnumerable<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BaseCoatId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ShadeId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ShadeId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.ShadeId, ViewBag.Paints as IEnumerable<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShadeId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HighlightOneId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HighlightOneId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.HighlightOneId, ViewBag.Paints as IEnumerable<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.HighlightOneId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -59,7 +59,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HighlightTwoId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HighlightTwoId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.HighlightTwoId, ViewBag.Paints as IEnumerable<SelectListItem>, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.HighlightTwoId, "", new { @class = "text-danger" })
             </div>
         </div>
