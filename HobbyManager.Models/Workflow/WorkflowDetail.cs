@@ -32,6 +32,8 @@ namespace HobbyManager.Models.Workflow
 
         public virtual PaintDetail Primer { get; set; }
         public virtual PaintDetail BaseCoat { get; set; }
-
+        public virtual PaintDetail Shade { get; set; }
+        public virtual PaintDetail HighlightOne { get; set; }
+        public virtual PaintDetail SecondHighlight { get; set; }
     }
 }

@@ -29,5 +29,11 @@ namespace HobbyManager.Models.Workflow
 
         [Display(Name = "Highlight Two")]
         public int HighlightTwoId { get; set; }
+
+        public virtual PaintDetail Primer { get; set; }
+        public virtual PaintDetail BaseCoat { get; set; }
+        public virtual PaintDetail Shade { get; set; }
+        public virtual PaintDetail HighlightOne { get; set; }
+        public virtual PaintDetail SecondHighlight { get; set; }
     }
 }

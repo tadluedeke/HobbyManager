@@ -24,6 +24,7 @@ namespace HobbyManager.Services
                 new Workflow()
                 {
                     OwnerId = _userId,
+                    Color = model.Color,
                     PrimeId = model.PrimeId,
                     BaseCoatId = model.BaseCoatId,
                     ShadeId = model.ShadeId,
@@ -58,6 +59,7 @@ namespace HobbyManager.Services
             }
         }
 
+
         public WorkflowDetail GetWorkflowById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -83,8 +85,20 @@ namespace HobbyManager.Services
                             Name = entity.BaseCoat.Name
                         },
                         ShadeId = entity.ShadeId,
+                        Shade = new PaintDetail
+                        {
+                            Name = entity.Shade.Name
+                        },
                         HighlightOneId = entity.HightlightOneId,
-                        HighlightTwoId = entity.HighlightTwoId
+                        HighlightOne = new PaintDetail
+                        {
+                            Name = entity.HighlightOne.Name
+                        },
+                        HighlightTwoId = entity.HighlightTwoId,
+                        SecondHighlight = new PaintDetail
+                        {
+                            Name = entity.SecondHighlight.Name
+                        }
                     };
             }
         }

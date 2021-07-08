@@ -25,10 +25,10 @@
             @Html.DisplayNameFor(model => model.ProjectWorkflowId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProjectId)
+            @Html.DisplayNameFor(model => model.Project.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WorkflowId)
+            @Html.DisplayNameFor(model => model.Workflow.Color)
         </th>
         <th></th>
     </tr>
@@ -39,10 +39,10 @@
             @Html.DisplayFor(modelItem => item.ProjectWorkflowId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProjectId)
+            @Html.DisplayFor(modelItem => item.Project.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WorkflowId)
+            @Html.DisplayFor(modelItem => item.Workflow.Color)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProjectWorkflowId }) |

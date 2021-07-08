@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Details";
+    var projectName = Model.Project.Name;
+    var modelName = Model.Model.Name;
 }
 
 <h2>Details</h2>
@@ -23,7 +25,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProjectId)
+            @projectName
         </dd>
 
         <dt>
@@ -31,7 +33,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ModelId)
+            @modelName
         </dd>
 
     </dl>

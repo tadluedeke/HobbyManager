@@ -15,7 +15,7 @@ namespace HobbyManager.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Mr. Cement S.";
 
             return View();
         }
