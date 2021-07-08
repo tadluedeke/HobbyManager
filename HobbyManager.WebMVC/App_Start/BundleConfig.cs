@@ -23,7 +23,7 @@ namespace HobbyManager.WebMVC
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-slate.css",
                       "~/Content/site.css"));
         }
     }
