@@ -3,29 +3,27 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">Hobby Manager is a free web MVC app that allows users to track their hobby projects with a focus on the paints and processes used.</p>
+    @Html.ActionLink("Learn More", "About")
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Instructions</h2>
+        <p>Please take a moment to read through the instructions before you begin.</p>
+        <p>@Html.ActionLink("Instructions", "Instructions", null, new { @class = "btn btn-primary btn-large" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Start here!</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Not sure where to start? Begin by adding some of your paint collection to the database!
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Add Paints", "Index", "Paint", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Need Inspiration?</h2>
+        <p>Check out some of my personal projects on my Instagram!</p>
+        <p><a class="btn btn-default" href="https://www.instagram.com/rc1107delta/">Get Inspired! &raquo;</a></p>
     </div>
 </div>

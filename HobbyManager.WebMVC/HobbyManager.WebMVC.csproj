@@ -170,6 +170,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Controllers\PaintController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectModelController.cs" />
+    <Compile Include="Controllers\ProjectWorkflowController.cs" />
+    <Compile Include="Controllers\WorkflowController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,10 +185,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-slate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Bradley.JPG" />
+    <Content Include="Content\images\Paints.JPG" />
+    <Content Include="Content\images\PaintsSubdued.JPG" />
+    <Content Include="Content\slate.bootstrap.min.css" />
+    <Content Include="Content\images\Tiger.JPG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -234,6 +246,38 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Model\Index.cshtml" />
+    <Content Include="Views\Model\Create.cshtml" />
+    <Content Include="Views\Model\Details.cshtml" />
+    <Content Include="Views\Model\Edit.cshtml" />
+    <Content Include="Views\Model\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Paint\Create.cshtml" />
+    <Content Include="Views\Paint\Index.cshtml" />
+    <Content Include="Views\Paint\Details.cshtml" />
+    <Content Include="Views\Paint\Edit.cshtml" />
+    <Content Include="Views\Paint\Delete.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\Project\Details.cshtml" />
+    <Content Include="Views\Project\Edit.cshtml" />
+    <Content Include="Views\Project\Delete.cshtml" />
+    <Content Include="Views\Workflow\Index.cshtml" />
+    <Content Include="Views\Workflow\Create.cshtml" />
+    <Content Include="Views\Workflow\Details.cshtml" />
+    <Content Include="Views\Workflow\Edit.cshtml" />
+    <Content Include="Views\Workflow\Delete.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Index.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Create.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Details.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Edit.cshtml" />
+    <Content Include="Views\ProjectWorkflow\Delete.cshtml" />
+    <Content Include="Views\ProjectModel\Index.cshtml" />
+    <Content Include="Views\ProjectModel\Create.cshtml" />
+    <Content Include="Views\ProjectModel\Details.cshtml" />
+    <Content Include="Views\ProjectModel\Edit.cshtml" />
+    <Content Include="Views\ProjectModel\Delete.cshtml" />
+    <Content Include="Views\Home\Instructions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

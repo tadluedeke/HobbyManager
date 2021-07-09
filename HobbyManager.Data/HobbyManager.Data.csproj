@@ -55,11 +55,83 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106291546204_InitialMigration.cs" />
+    <Compile Include="Migrations\202106291546204_InitialMigration.Designer.cs">
+      <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301835478_UpdateWorkflow.cs" />
+    <Compile Include="Migrations\202106301835478_UpdateWorkflow.Designer.cs">
+      <DependentUpon>202106301835478_UpdateWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301839409_TestingModelBuilderFK.cs" />
+    <Compile Include="Migrations\202106301839409_TestingModelBuilderFK.Designer.cs">
+      <DependentUpon>202106301839409_TestingModelBuilderFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301842025_TestingModelBuilderFK2.cs" />
+    <Compile Include="Migrations\202106301842025_TestingModelBuilderFK2.Designer.cs">
+      <DependentUpon>202106301842025_TestingModelBuilderFK2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301845576_TestingModelBuilderFK3.cs" />
+    <Compile Include="Migrations\202106301845576_TestingModelBuilderFK3.Designer.cs">
+      <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011751457_ErrorSaysTo1.cs" />
+    <Compile Include="Migrations\202107011751457_ErrorSaysTo1.Designer.cs">
+      <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051807553_UpdatingTablesForViews.cs" />
+    <Compile Include="Migrations\202107051807553_UpdatingTablesForViews.Designer.cs">
+      <DependentUpon>202107051807553_UpdatingTablesForViews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071501534_Dropdown.cs" />
+    <Compile Include="Migrations\202107071501534_Dropdown.Designer.cs">
+      <DependentUpon>202107071501534_Dropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071710285_Dropdown2.cs" />
+    <Compile Include="Migrations\202107071710285_Dropdown2.Designer.cs">
+      <DependentUpon>202107071710285_Dropdown2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Paint.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectModel.cs" />
+    <Compile Include="ProjectWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106291546204_InitialMigration.resx">
+      <DependentUpon>202106291546204_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301835478_UpdateWorkflow.resx">
+      <DependentUpon>202106301835478_UpdateWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301839409_TestingModelBuilderFK.resx">
+      <DependentUpon>202106301839409_TestingModelBuilderFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301842025_TestingModelBuilderFK2.resx">
+      <DependentUpon>202106301842025_TestingModelBuilderFK2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301845576_TestingModelBuilderFK3.resx">
+      <DependentUpon>202106301845576_TestingModelBuilderFK3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011751457_ErrorSaysTo1.resx">
+      <DependentUpon>202107011751457_ErrorSaysTo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051807553_UpdatingTablesForViews.resx">
+      <DependentUpon>202107051807553_UpdatingTablesForViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071501534_Dropdown.resx">
+      <DependentUpon>202107071501534_Dropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071710285_Dropdown2.resx">
+      <DependentUpon>202107071710285_Dropdown2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

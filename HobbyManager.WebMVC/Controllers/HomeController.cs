@@ -15,7 +15,7 @@ namespace HobbyManager.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Mr. Cement S.";
 
             return View();
         }
@@ -24,6 +24,11 @@ namespace HobbyManager.WebMVC.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Instructions()
+        {
             return View();
         }
     }
