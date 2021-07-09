@@ -190,7 +190,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Bradley.JPG" />
+    <Content Include="Content\images\Paints.JPG" />
+    <Content Include="Content\images\PaintsSubdued.JPG" />
     <Content Include="Content\slate.bootstrap.min.css" />
+    <Content Include="Content\images\Tiger.JPG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -273,6 +277,7 @@
     <Content Include="Views\ProjectModel\Details.cshtml" />
     <Content Include="Views\ProjectModel\Edit.cshtml" />
     <Content Include="Views\ProjectModel\Delete.cshtml" />
+    <Content Include="Views\Home\Instructions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
