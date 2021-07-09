@@ -18,6 +18,19 @@ namespace HobbyManager.Services
             _userId = userId;
         }
 
+        public ModelService()
+        {
+
+        }
+
+        public IEnumerable<Model> GetModelsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Models.ToList();
+            }
+        }
+
         public bool CreateModel(ModelCreate model)
         {
             var entity =

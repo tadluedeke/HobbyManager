@@ -18,6 +18,19 @@ namespace HobbyManager.Services
             _userId = userId;
         }
 
+        public WorkflowService()
+        {
+
+        }
+
+        public IEnumerable<Workflow> GetWorkflowsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Workflows.ToList();
+            }
+        }
+
         public bool CreateWorkflow(WorkflowCreate model)
         {
             var entity =

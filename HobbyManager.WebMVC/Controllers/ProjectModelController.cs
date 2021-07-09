@@ -1,4 +1,5 @@
-﻿using HobbyManager.Models.ProjectModel;
+﻿using HobbyManager.Data;
+using HobbyManager.Models.ProjectModel;
 using HobbyManager.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -24,6 +25,36 @@ namespace HobbyManager.WebMVC.Controllers
         //GET: ProjectModelCreate
         public ActionResult Create()
         {
+            List<Project> Projects = (new ProjectService()).GetProjectsList().ToList();
+            var query = from p in Projects
+                        select new SelectListItem()
+                        {
+                            Value = p.ProjectId.ToString(),
+                            Text = p.Name,
+                        };
+            ViewBag.ProjectId = query.ToList();
+            ViewData["Projects"] = from p in Projects
+                                   select new SelectListItem()
+                                   {
+                                       Value = p.ProjectId.ToString(),
+                                       Text = p.Name,
+                                   };
+
+            List < Model > Models = (new ModelService()).GetModelsList().ToList();
+            var query2 = from m in Models
+                        select new SelectListItem()
+                        {
+                            Value = m.ModelId.ToString(),
+                            Text = m.Name,
+                        };
+            ViewBag.ModelId = query2.ToList();
+            ViewData["Models"] = from m in Models
+                                 select new SelectListItem()
+                                 {
+                                     Value = m.ModelId.ToString(),
+                                     Text = m.Name,
+                                 };
+
             return View();
         }
 

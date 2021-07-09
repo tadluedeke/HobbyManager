@@ -17,6 +17,19 @@ namespace HobbyManager.Services
             _userId = userId;
         }
 
+        public ProjectService()
+        {
+
+        }
+
+        public IEnumerable<Project> GetProjectsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Projects.ToList();
+            }
+        }
+
         public bool CreateProject(ProjectCreate model)
         {
             var entity =

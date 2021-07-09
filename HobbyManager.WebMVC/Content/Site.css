@@ -23,3 +23,23 @@ textarea {
     max-width: 280px;
 }
 
+.navbar{
+    border: 5px solid #681a1a;
+    background-image: url(images/PaintsSubdued.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+.nav li {
+    background-color: #681a1a;
+    color: black;
+    block-size: auto;
+}
+
+.row {
+    background-color: darkslategrey;
+}
+
+.text-wrapper {
+    background-color: darkslategrey;
+}

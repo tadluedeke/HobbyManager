@@ -26,5 +26,10 @@ namespace HobbyManager.WebMVC.Controllers
 
             return View();
         }
+
+        public ActionResult Instructions()
+        {
+            return View();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using HobbyManager.Models.ProjectWorkflow;
+﻿using HobbyManager.Data;
+using HobbyManager.Models.ProjectWorkflow;
 using HobbyManager.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -24,6 +25,36 @@ namespace HobbyManager.WebMVC.Controllers
         //GET: ProjectWorkflowCreate
         public ActionResult Create()
         {
+            List<Project> Projects = (new ProjectService()).GetProjectsList().ToList();
+            var query = from p in Projects
+                        select new SelectListItem()
+                        {
+                            Value = p.ProjectId.ToString(),
+                            Text = p.Name,
+                        };
+            ViewBag.ProjectId = query.ToList();
+            ViewData["Projects"] = from p in Projects
+                                   select new SelectListItem()
+                                   {
+                                       Value = p.ProjectId.ToString(),
+                                       Text = p.Name,
+                                   };
+
+            List<Workflow> Workflows = (new WorkflowService()).GetWorkflowsList().ToList();
+            var query2 = from w in Workflows
+                         select new SelectListItem()
+                         {
+                             Value = w.WorkflowId.ToString(),
+                             Text = w.Color,
+                         };
+            ViewBag.ModelId = query2.ToList();
+            ViewData["Models"] = from w in Workflows
+                                 select new SelectListItem()
+                                 {
+                                     Value = w.WorkflowId.ToString(),
+                                     Text = w.Color,
+                                 };
+
             return View();
         }
 

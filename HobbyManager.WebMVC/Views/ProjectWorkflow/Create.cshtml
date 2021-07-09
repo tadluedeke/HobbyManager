@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ProjectId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.ProjectId, ViewBag.Models as IEnumerable<SelectListItem>, "Required", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProjectId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WorkflowId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.WorkflowId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => Model.WorkflowId, ViewBag.Models as IEnumerable<SelectListItem>, "Required", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.WorkflowId, "", new { @class = "text-danger" })
             </div>
         </div>
