@@ -8,9 +8,9 @@
 * [Stretch Goals](#stretch-goals)
 * [Schedule](#schedule)
 * [Created By](#created-by)
-* [Screenshots](#screenshots)
 * [Instructions](#instructions)
 * [Links](#links)
+* [Special Thanks](#special-thanks)
 
 ## Database
 ![DB Diagram](https://github.com/tadluedeke/HobbyManager/blob/master/images/DbDiagramHobbyManager.PNG)
@@ -137,7 +137,8 @@ Create, Read, Update and Delete Projects | Display joining table returns in Proj
 Add Models, Paints and Workflows to Projects |
 
 ## Planning
-[Planning Document](https://docs.google.com/document/d/1cz9v9m6T4dUasN4nBdTGplcM4z0KZASWweCTwsDIySo/edit)
+[Planning Document](https://docs.google.com/document/d/1cz9v9m6T4dUasN4nBdTGplcM4z0KZASWweCTwsDIySo/edit)  
+
 For this project, I tried to use Agile methodology by breaking the project up into daily sprints over the course of the project. I utilized a planning document, a database diagram, and a calendar (contained in the planning document) to make a rough sketch of what I needed to do each day for that day's sprint. As can be expected, certain parts went faster than anticipated, and others went slower.
 
 ## Stretch Goals
@@ -145,3 +146,20 @@ I would like to add notes functionality so that a user may make notes for indivi
 
 ## Schedule
 ### Initial Schedule
+![Calendar](https://github.com/tadluedeke/HobbyManager/blob/master/images/Schedule.PNG)
+
+## Created By
+Tad Luedeke, Red Badge Project for Eleven Fifty Academy.
+
+## Instructions
+This web application can be downloaded from GitHub and run using Microsoft Visual Studio Community.
+
+## Links
+[DB Diagram](https://dbdiagram.io/d/60d48860dd6a5971481df232)  
+
+[Trello Board](https://trello.com/b/HhCQaaY2/hobby-manager)  
+
+[Google Docs - Planning](https://docs.google.com/document/d/1cz9v9m6T4dUasN4nBdTGplcM4z0KZASWweCTwsDIySo/edit)
+
+## Special Thanks
+I would like to thank my EFA Instructors - Michael Pabody, Jacob Brown and Andrew Torr, along with the tireless efforts of the EFA Learning Assistants Justin Scroggins, Adam Metcalf, and Mitchell Reed, without whom this project would not have been completed to the level that it is. I'm truly grateful for your help. Finally, to my wife Amanda Luedeke, who put up with my stress and worry for 12 weeks, and allowed me to take this course. 
